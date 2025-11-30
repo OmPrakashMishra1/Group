@@ -6,6 +6,7 @@ import CollegeGrid from "./components/CollegeGrid";
 import SidebarActivity from "./components/SidebarActivity";
 import ReviewModal from "./components/ReviewModal";
 import Footer from "./components/Footer";
+import Universities from "./components/Universities"
 
 // --- DATA ---
 const INITIAL_COLLEGES = [
