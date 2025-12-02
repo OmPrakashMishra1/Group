@@ -501,45 +501,182 @@ body {
 }
 
 /* Footer */
+/* ========== CAMPUS LOG FOOTER ========== */
+
 .footer {
-  border-top: 1px solid var(--border-color);
-  padding: 2rem 1rem;
-  margin-top: 3rem;
+  background: #212428;             /* dark block like the screenshot */
+  color: #f5f5f5;
+  padding: 3rem 0 1.5rem 0;
+  margin-top: 4rem;
+  font-family: var(--font-sans, system-ui);
 }
 
-.footer-container {
+/* CONTAINER UTILITIES */
+.footer-top,
+.footer-middle,
+.footer-bottom {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  padding: 0 1.5rem;
 }
 
-.footer-links {
-  display: flex;
-  gap: 1rem;
+/* ---------- TOP ROW: COLUMNS ---------- */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #2c3440;
 }
 
-.footer-links a {
-  color: var(--text-muted);
+@media (min-width: 768px) {
+  .footer-top {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 0.85rem;
+  color: #c7d0dc;
   text-decoration: none;
+  margin-bottom: 0.35rem;
+  transition: color 0.2s;
 }
 
-.footer-links a:hover {
-  color: var(--text-main);
+.footer-col a:hover {
+  color: #ffffff;
 }
 
-.footer-social {
-  display: flex;
-  gap: 1rem;
+/* ---------- MIDDLE ROW ---------- */
+
+.footer-middle {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.75rem;
+  padding: 2rem 1.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.footer-copy {
+@media (min-width: 768px) {
+  .footer-middle {
+    grid-template-columns: 2fr 1.2fr 1.2fr 1.2fr;
+    align-items: center;
+  }
+}
+
+/* Brand block */
+
+.footer-brand-block {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.75rem;
 }
+
+.footer-logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #111418;
+  border: 1px solid #2c3440;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.footer-logo-main {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer-logo-sub {
+  font-size: 0.9rem;
+  color: #00e054;
+}
+
+/* Pills (Get in touch / Contribute) */
+
+.footer-pill-block h5,
+.footer-follow-block h5 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.footer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #323842;
+  color: #f5f5f5;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer-pill:hover {
+  background: #3f4652;
+  transform: translateY(-1px);
+}
+
+/* Follow icons */
+
+.footer-follow-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-follow-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #323842;
+  color: #c7d0dc;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.footer-follow-icons a:hover {
+  background: #ffffff;
+  color: #111418;
+  transform: translateY(-1px);
+}
+
+/* ---------- BOTTOM ROW ---------- */
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem 0;
+  border-top: 1px solid #2c3440;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #9aa4b5;
+  text-align: center;
+}
+
+
+
+
+

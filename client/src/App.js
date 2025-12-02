@@ -1,12 +1,13 @@
 import React, { useMemo, useState } from "react";
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import CollegeGrid from "./components/CollegeGrid";
 import SidebarActivity from "./components/SidebarActivity";
 import ReviewModal from "./components/ReviewModal";
 import Footer from "./components/Footer";
-import Universities from "./components/Universities"
+import Universities from "./components/Lists";
+import Loginpage from "./components/Loginpage";
 
 // --- DATA ---
 const INITIAL_COLLEGES = [
@@ -78,16 +79,30 @@ export default function App() {
         onSearch={setSearchQuery}
         onOpenModal={() => handleOpenModal()}
       />
-      <Hero />
 
-      <main className="container">
-        <CollegeGrid
-          colleges={filteredColleges}
-          searchQuery={searchQuery}
-          onReview={handleOpenModal}
+      {/* ✅ Routes decide which page to show */}
+      <Routes>
+        {/* Home page (what you had before) */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <main className="container">
+                <CollegeGrid
+                  colleges={filteredColleges}
+                  searchQuery={searchQuery}
+                  onReview={handleOpenModal}
+                />
+                <SidebarActivity reviews={reviews} colleges={colleges} />
+              </main>
+            </>
+          }
         />
-        <SidebarActivity reviews={reviews} colleges={colleges} />
-      </main>
+
+        {/* Universities page (for /universities link) */}
+        <Route path="/universities" element={<Universities />} />
+      </Routes>
 
       <Footer />
 
